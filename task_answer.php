@@ -156,7 +156,7 @@ print("#####q9#####".PHP_EOL);
 $names = ["田中", "佐藤", "佐々木", "高橋"];
 
 $names2 = [];
-foreach ($names as $key => $name) {
+ foreach ($names as $key => $name) {
     $number = $key + 1; //添字配列は0から始まるため、会員No.は+1しておく
     $names2[] = "会員No.".$number." ".$name;;
 }
@@ -311,7 +311,7 @@ $users = [
 ];
 
 foreach ($users as $key => $user) {
-    echo "私の名前は".$user["name"]."です。年齢は".$user["age"]."歳です。".PHP_EOL;
+    echo "私の名前は".$user["name"]."です。年齢は".$user["age"]."歳です。".PHP_EOL
 }
 //補足
 //$usersが多次元連想配列のため、$userも連想配列の値の取り出し方で値を取得する

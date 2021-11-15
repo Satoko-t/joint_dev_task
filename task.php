@@ -55,10 +55,16 @@ print("#####q5#####".PHP_EOL);
 
 // 以下に回答を記載
 $array1 = [];
-$array2 = [1, 5, 8, 10];
+
+var_export(empty($array1));
+
+echo PHP_EOL;
+
 
 // 以下に回答を記載
+$array2 = [1, 5, 8, 10];
 
+var_export(empty($array2));
 echo PHP_EOL;
 
 print("#####q6#####".PHP_EOL);
@@ -66,6 +72,12 @@ $numbers1 = [1, 2, 3, 4, 5];
 
 
 // 以下に回答を記載
+$number = [];
+foreach ($numbers1 as $number) {
+    $number *= 10;
+    $numbers2[] = $number ;
+}
+print_r($numbers2);
 
 echo PHP_EOL;
 
@@ -73,7 +85,7 @@ print("#####q7#####".PHP_EOL);
 $array = ["1", "2", "3", "4", "5"];
 
 // 以下に回答を記載
-
+$array = array_map('intval',$array);
 // 以下は変更しないで下さい
 var_dump($array);
 
@@ -83,8 +95,10 @@ print("#####q8#####".PHP_EOL);
 $programming_languages = ["php", "ruby", "python", "javascript"];
 
 // 以下に回答を記載
+$programming_languages =  array_map('ucfirst',$programming_languages);
+$upper_case_programming_languages = array_map('strtoupper',$programming_languages);
 
-// 以下は変更しないで下さい
+// 以下は変更しないで下さいp
 print_r($programming_languages);
 echo PHP_EOL;
 print_r($upper_case_programming_languages);
@@ -95,6 +109,11 @@ print("#####q9#####".PHP_EOL);
 $names = ["田中", "佐藤", "佐々木", "高橋"];
 
 // 以下に回答を記載
+$names2[];
+foreach ($names as $key => $name) {
+    $number = $kye + 1;
+    $names2[] = "会員No.".$number." ".$name;;
+    print_r($names2);
 
 echo PHP_EOL;
 
@@ -102,21 +121,34 @@ print("#####q10#####".PHP_EOL);
 $foods = ["いか", "たこ", "うに", "しゃけ", "うにぎり", "うに軍艦", "うに丼", "高級なうに"];
 
 // 以下に回答を記載
-
+foreach ($foods as $food) {
+    if (preg_match('/うに/',$food)) {
+       print('好物です'.PHP_EOL);
+    } else {
+       print('まぁまぁ好きです'.PHP_EOL);
+    }
+}
 echo PHP_EOL;
 
 print("#####q11#####".PHP_EOL);
 $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
 
 // 以下に回答を記載
-
+$sports2 = [];
+foreach ($sports as $key => $sport) {
+     if (is_array($sport)) {
+         $sports2 = array_merge($sports2, $sport);
+    } else {
+        $sports2[] = $sport;
+    }
+}
 echo PHP_EOL;
 
 print("#####q12#####".PHP_EOL);
 $data = ["user" => ["name" => "satou", "age" => 33]];
 
 // 以下に回答を記載
-
+print_r($date['user']['name']);
 echo PHP_EOL;
 
 print("#####q13#####".PHP_EOL);
@@ -124,6 +156,8 @@ $user_data = ["name" => "神里", "age" => 31, "address" => "埼玉"];
 $update_data = ["age" => 32, "address" => "沖縄"];
 
 // 以下に回答を記載
+$user_date = array_merge($user_date, $update_date);
+print_r($user_date);
 
 echo PHP_EOL;
 
@@ -131,15 +165,31 @@ print("#####q14#####".PHP_EOL);
 $data = ["name" => "satou", "age" => 33, "address" => "saitama", "hobby" => "soccer", "email" => "hoge@fuga.com"];
 
 // 以下に回答を記載
+$new_date = [];
+ foreach ($date as $one_date) {
+     array_push($new_date, $one_date);    
+ }
+ print_r($new_date);
 
 echo PHP_EOL;
 
 print("#####q15#####".PHP_EOL);
+
 $data1 = ["name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin"];
 $data2 = ["name" => "yamada", "hobby" => "baseball", "role" => "normal"];
 
 // 以下に回答を記載
+if (array_key_exsist('age'.$date1)) {
+    print('OK'.PHP_EOL);
+} else {
+    print('NG'.PHP_EOL);
+}
 
+if(array_key_exists('age',$date2)) {
+    print('OK'.PHP_EOL);
+} else {
+    print('NG'.PHP_EOL);
+}
 echo PHP_EOL;
 
 print("#####q16#####".PHP_EOL);
@@ -151,7 +201,9 @@ $users = [
 ];
 
 // 以下に回答を記載
-
+foreach ($users as $key => $user) {
+    echo "私の名前は".$user["name"]."です。年齢は".$user["age"]."歳です。".PHP_EOL;
+}
 echo PHP_EOL;
 
 print("#####q17#####".PHP_EOL);
@@ -231,3 +283,4 @@ foreach ($humans as $human) {
 
 echo PHP_EOL;
 
+?>
