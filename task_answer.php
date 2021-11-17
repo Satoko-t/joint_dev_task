@@ -311,7 +311,7 @@ $users = [
 ];
 
 foreach ($users as $key => $user) {
-    echo "私の名前は".$user["name"]."です。年齢は".$user["age"]."歳です。".PHP_EOL
+    echo "私の名前は".$user["name"]."です。年齢は".$user["age"]."歳です。".PHP_EOL;
 }
 //補足
 //$usersが多次元連想配列のため、$userも連想配列の値の取り出し方で値を取得する
