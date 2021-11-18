@@ -111,9 +111,10 @@ $names = ["田中", "佐藤", "佐々木", "高橋"];
 // 以下に回答を記載
 $names2 = [];
 foreach ($names as $key => $name) {
-    $number = $kye + 1;
+    $number = $key + 1;
     $names2[] = "会員No.".$number." ".$name;;
-    print_r($names2);
+}
+print_r($names2);
 
 echo PHP_EOL;
 
@@ -137,8 +138,7 @@ $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"],
 $sports2 = [];
 foreach ($sports as $key => $sport) {
     if (is_array($sport)) {
-         
-        
+  
         $sports2 = array_merge($sports2, $sport);
     } else {
 
@@ -201,7 +201,7 @@ $data1 = ["name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin
 $data2 = ["name" => "yamada", "hobby" => "baseball", "role" => "normal"];
 
 // 以下に回答を記載
-if (array_key_exists('age'.$data1)) {
+if (array_key_exists('age',$data1)) {
     print('OK'.PHP_EOL);
 } else {
     print('NG'.PHP_EOL);
@@ -212,6 +212,7 @@ if(array_key_exists('age',$data2)) {
 } else {
     print('NG'.PHP_EOL);
 }
+
 echo PHP_EOL;
 
 print("#####q16#####".PHP_EOL);
@@ -229,7 +230,7 @@ foreach ($users as $key => $user) {
 }
 echo PHP_EOL;
 
-print("#####q17#####".PHP_EOL);
+/*print("#####q17#####".PHP_EOL);
 class User
 {
 
@@ -306,4 +307,3 @@ foreach ($humans as $human) {
 
 
 
-}
