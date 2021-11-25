@@ -267,7 +267,7 @@ class Man
     private $name;
     private $age;
 
-    function __construct($user_neme, $user_age) {
+    function __construct($user_name, $user_age) {
         $this->name = $user_name;
         $this->age = $user_age;
     }
