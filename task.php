@@ -138,10 +138,8 @@ $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"],
 $sports2 = [];
 foreach ($sports as $key => $sport) {
     if (is_array($sport)) {
-  
         $sports2 = array_merge($sports2, $sport);
     } else {
-
         $sports2[] = $sport;
     }
 }
@@ -230,11 +228,25 @@ foreach ($users as $key => $user) {
 }
 echo PHP_EOL;
 
-/*print("#####q17#####".PHP_EOL);
+print("#####q17#####".PHP_EOL);
 class User
 {
 
     // コードを追加
+    private $name;
+    private $age;
+    private $gender;
+
+    function __construct($user_name, $user_age, $user_gender) {
+        $this->name = $user_name;
+        $this->age = $user_age;
+        $this->gender = $user_gender;
+    }
+    function info(){
+        print("名前:".$this->name.PHP_EOL);
+        print("年齢:".$this->age.PHP_EOL);
+        print("性別:".$this->gender.PHP_EOL);
+    }
 
 }
 
@@ -250,6 +262,25 @@ echo PHP_EOL;
 print("#####q18#####".PHP_EOL);
 
 // コードを追加
+class Man
+{
+    private $name;
+    private $age;
+
+    function __construct($user_neme, $user_age) {
+        $this->name = $user_name;
+        $this->age = $user_age;
+    }
+
+    function introduce() {
+        if ($this->age >=20) {
+            print("こんにちは,".$this->name."と申します。宜しくお願いいたします。".PHP_EOL);
+        }else{
+            print("はいさいまいど～、".$this->name."です！！！".PHP_EOL);
+        }
+    }
+
+}
 
 $man1 = new Man("あじー", 32);
 $man2 = new Man("ゆたぼん", 10);
@@ -264,7 +295,7 @@ class Item
 {
     // 以下を修正して下さい
 
-    protected $name;
+    public $name;
 
     function __construct($book_name){
         $this->name = $book_name;
@@ -281,14 +312,38 @@ print("#####q20#####".PHP_EOL);
 class Human
 {
 
-    // コードを追加
+    public $name;
+    public $age;
+
+    function __construct($user_name,$user_age) {
+        $this->name = $user_name;
+        $this->age = $user_age;
+    }
 
 }
 
 class Zoo
 {
 
-    // コードを追加
+    private $name;
+    private $entry_fee;
+
+    function __construct($zoo_name,$zoo_entry_fee) {
+        $this->name = $zoo_name;
+        $this->entry_fee = $zoo_entry_fee;
+    }
+
+    function info_entry_fee(Human $human) {
+        if ($human->age <=5) {
+            print($human->name."さんの入場料金は ".$this->entry_fee["infant"]."円です。".PHP_EOL);
+        } elseif ($human->age <= 12) {
+            print($human->name."さんの入場料金は ".$this->entry_fee["children"]."円です。".PHP_EOL);
+        } elseif ($human->age <= 64) {
+            print($human->name."さんの入場料金は ".$this->entry_fee["adult"]."円です。".PHP_EOL);
+        } elseif ($human->age <=120) {
+            print($human->name."さんの入場料は ".$this->entry_fee["senior"]."円です。".PHP_EOL);
+        }
+    }
 
 }
 
@@ -305,5 +360,27 @@ foreach ($humans as $human) {
     $zoo->info_entry_fee($human);
 }
 
+print("####21####".PHP_EOL);
 
+for($i=1 ; $i <= 30 ; $i++ ){
+    if($i % 3 == 0 && $i % 5 == 0){
+        echo "FizzBuzz";
+        echo PHP_EOL;
+    } elseif($i % 3 == 0 && $i % 7 == 0){
+        echo "FizzHoge";
+        echo PHP_EOL;
+    } elseif($i % 3 == 0){
+        echo "Fizz";
+        echo PHP_EOL;
+    } elseif($i % 5 == 0){
+        echo "Bizz";
+        echo PHP_EOL;
+    } elseif($i % 7 == 0){
+        echo "Hoge";
+        echo PHP_EOL;
+    } else{
+        echo $i;
+        echo PHP_EOL;
+}
 
+}
